@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${montserrat.className} antialiased bg-cs-primary text-white`}>
+            <body className={`${montserrat.className} antialiased bg-black text-white`}>
                 {children}
             </body>
         </html>

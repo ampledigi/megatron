@@ -43,21 +43,27 @@ const Herosection = () => {
     }, [text, isDeleting, wordIndex]);
 
     return (
-        <div className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-black w-full">
-            {/* Background gradients with slower pulse animation */}
+        <div className="relative min-h-[80vh] md:min-h-[100vh] flex items-center justify-center overflow-hidden bg-black w-full">
+            {/* Background gradients with reduced opacity on mobile */}
             <div className="absolute inset-0">
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-orange-900/20 animate-[pulse_4s_ease-in-out_infinite]"></div>
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,rgba(249,115,22,0.15),transparent_50%)]"></div>
-                <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,rgba(194,65,12,0.15),transparent_50%)]"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-600/[0.04] to-orange-900/[0.04] md:from-orange-600/10 md:to-orange-900/10 animate-[pulse_4s_ease-in-out_infinite]"></div>
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,rgba(249,115,22,0.04),transparent_50%)] md:bg-[radial-gradient(ellipse_at_top,rgba(249,115,22,0.08),transparent_50%)]"></div>
+                <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,rgba(194,65,12,0.04),transparent_50%)] md:bg-[radial-gradient(ellipse_at_bottom_right,rgba(194,65,12,0.08),transparent_50%)]"></div>
             </div>
 
-            {/* Slower blob animations */}
-            <div className="absolute top-20 left-[5%] md:left-20 w-36 sm:w-48 md:w-64 lg:w-72 h-36 sm:h-48 md:h-64 lg:h-72 bg-orange-500/10 rounded-full mix-blend-multiply filter blur-xl animate-[blob_10s_infinite]"></div>
-            <div className="absolute top-40 right-[5%] md:right-20 w-36 sm:w-48 md:w-64 lg:w-72 h-36 sm:h-48 md:h-64 lg:h-72 bg-orange-700/10 rounded-full mix-blend-multiply filter blur-xl animate-[blob_10s_infinite_3s]"></div>
-            <div className="absolute -bottom-8 left-[10%] md:left-40 w-36 sm:w-48 md:w-64 lg:w-72 h-36 sm:h-48 md:h-64 lg:h-72 bg-orange-600/10 rounded-full mix-blend-multiply filter blur-xl animate-[blob_10s_infinite_6s]"></div>
+            {/* Slower blob animations with reduced opacity on mobile */}
+            <div className="absolute top-20 left-[5%] md:left-20 w-36 sm:w-48 md:w-64 lg:w-72 h-36 sm:h-48 md:h-64 lg:h-72 bg-orange-500/[0.04] md:bg-orange-500/5 rounded-full mix-blend-multiply filter blur-xl animate-[blob_10s_infinite]"></div>
+            <div className="absolute top-40 right-[5%] md:right-20 w-36 sm:w-48 md:w-64 lg:w-72 h-36 sm:h-48 md:h-64 lg:h-72 bg-orange-700/[0.04] md:bg-orange-700/5 rounded-full mix-blend-multiply filter blur-xl animate-[blob_10s_infinite_3s]"></div>
+            <div className="absolute -bottom-8 left-[10%] md:left-40 w-36 sm:w-48 md:w-64 lg:w-72 h-36 sm:h-48 md:h-64 lg:h-72 bg-orange-600/[0.04] md:bg-orange-600/5 rounded-full mix-blend-multiply filter blur-xl animate-[blob_10s_infinite_6s]"></div>
 
-            {/* Grid background with medium sizing */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,125,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,125,0,0.05)_1px,transparent_1px)] bg-[size:24px_24px] sm:bg-[size:36px_36px] md:bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black_70%)]"></div>
+            {/* Grid background with different opacity for mobile and desktop */}
+            <div
+                className="absolute inset-0 md:bg-[linear-gradient(rgba(255,125,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,125,0,0.03)_1px,transparent_1px)] bg-[linear-gradient(rgba(255,125,0,0.006)_1px,transparent_1px),linear-gradient(90deg,rgba(255,125,0,0.006)_1px,transparent_1px)] bg-[size:24px_24px] sm:bg-[size:36px_36px] md:bg-[size:48px_48px]"
+                style={{
+                    maskImage: 'linear-gradient(to bottom, black, transparent)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, black, transparent)',
+                }}
+            ></div>
 
             {/* Content container */}
             <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-16 lg:py-20 z-10">
