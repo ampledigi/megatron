@@ -43,18 +43,18 @@ const Herosection = () => {
     }, [text, isDeleting, wordIndex]);
 
     return (
-        <div className="relative min-h-[80vh] md:min-h-[100vh] flex items-center justify-center overflow-hidden bg-black w-full">
+        <div className="relative min-h-[90vh] md:min-h-[100vh] flex items-center justify-center overflow-hidden bg-black w-full">
             {/* Background gradients with reduced opacity on mobile */}
             <div className="absolute inset-0">
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-600/[0.04] to-orange-900/[0.04] md:from-orange-600/10 md:to-orange-900/10 animate-[pulse_4s_ease-in-out_infinite]"></div>
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,rgba(249,115,22,0.04),transparent_50%)] md:bg-[radial-gradient(ellipse_at_top,rgba(249,115,22,0.08),transparent_50%)]"></div>
-                <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,rgba(194,65,12,0.04),transparent_50%)] md:bg-[radial-gradient(ellipse_at_bottom_right,rgba(194,65,12,0.08),transparent_50%)]"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-600/[0.07] to-orange-900/[0.07] md:from-orange-600/10 md:to-orange-900/15 animate-[pulse_4s_ease-in-out_infinite]"></div>
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,rgba(249,115,22,0.07),transparent_50%)] md:bg-[radial-gradient(ellipse_at_top,rgba(249,115,22,0.08),transparent_50%)]"></div>
+                <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,rgba(194,65,12,0.07),transparent_50%)] md:bg-[radial-gradient(ellipse_at_bottom_right,rgba(194,65,12,0.08),transparent_50%)]"></div>
             </div>
 
             {/* Slower blob animations with reduced opacity on mobile */}
-            <div className="absolute top-20 left-[5%] md:left-20 w-36 sm:w-48 md:w-64 lg:w-72 h-36 sm:h-48 md:h-64 lg:h-72 bg-orange-500/[0.04] md:bg-orange-500/5 rounded-full mix-blend-multiply filter blur-xl animate-[blob_10s_infinite]"></div>
-            <div className="absolute top-40 right-[5%] md:right-20 w-36 sm:w-48 md:w-64 lg:w-72 h-36 sm:h-48 md:h-64 lg:h-72 bg-orange-700/[0.04] md:bg-orange-700/5 rounded-full mix-blend-multiply filter blur-xl animate-[blob_10s_infinite_3s]"></div>
-            <div className="absolute -bottom-8 left-[10%] md:left-40 w-36 sm:w-48 md:w-64 lg:w-72 h-36 sm:h-48 md:h-64 lg:h-72 bg-orange-600/[0.04] md:bg-orange-600/5 rounded-full mix-blend-multiply filter blur-xl animate-[blob_10s_infinite_6s]"></div>
+            <div className="absolute top-20 left-[5%] md:left-20 w-36 sm:w-48 md:w-64 lg:w-72 h-36 sm:h-48 md:h-64 lg:h-72 bg-orange-500/[0.07] md:bg-orange-500/5 rounded-full mix-blend-multiply filter blur-xl animate-[blob_10s_infinite]"></div>
+            <div className="absolute top-40 right-[5%] md:right-20 w-36 sm:w-48 md:w-64 lg:w-72 h-36 sm:h-48 md:h-64 lg:h-72 bg-orange-700/[0.07] md:bg-orange-700/5 rounded-full mix-blend-multiply filter blur-xl animate-[blob_10s_infinite_3s]"></div>
+            <div className="absolute -bottom-8 left-[10%] md:left-40 w-36 sm:w-48 md:w-64 lg:w-72 h-36 sm:h-48 md:h-64 lg:h-72 bg-orange-600/[0.07] md:bg-orange-600/5 rounded-full mix-blend-multiply filter blur-xl animate-[blob_10s_infinite_6s]"></div>
 
             {/* Grid background with different opacity for mobile and desktop */}
             <div
@@ -88,18 +88,19 @@ const Herosection = () => {
                         </span>
                     </h1>
 
-                    <div className="mt-4 sm:mt-6 md:mt-8 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-gray-300 animate-[fadeInUp_1s_ease-out_0.9s] opacity-0 [animation-fill-mode:forwards] select-text">
+                    <div className="mt-4 sm:mt-6 md:mt-8 max-w-2xl mx-auto text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 animate-[fadeInUp_1s_ease-out_0.9s] opacity-0 [animation-fill-mode:forwards] select-text">
                         <p>Elevate your digital presence with cutting-edge solutions.</p>
                         <div className="mt-2">No Calls. No BS. Just Results.</div>
                     </div>
 
                     <div className="mt-8 sm:mt-10 md:mt-12 lg:mt-14 animate-[fadeInUp_1s_ease-out_1.2s] opacity-0 [animation-fill-mode:forwards]">
-                        <button
-                            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="relative z-20 px-6 py-2 text-lg font-semibold rounded bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 transition-all duration-500 transform hover:scale-105 hover:shadow-[0_0_35px_rgba(249,115,22,0.3)] active:scale-95 cursor-pointer select-none"
-                        >
+                        <button className="relative z-20 px-6 py-2 text-lg font-semibold rounded bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 transition-all duration-500 transform hover:scale-105 hover:shadow-[0_0_35px_rgba(249,115,22,0.3)] active:scale-95 cursor-pointer select-none">
                             Let&apos;s talk
                         </button>
+                    </div>
+
+                    <div className="mt-8 sm:mt-10 md:mt-12 max-w-2xl mx-auto text-sm sm:text-base text-gray-300 animate-[fadeInUp_1s_ease-out_0.9s] opacity-0 [animation-fill-mode:forwards] select-text">
+                        <p>Trusted by Founders and Entrepreneurs from all over the world</p>
                     </div>
                 </div>
             </div>
