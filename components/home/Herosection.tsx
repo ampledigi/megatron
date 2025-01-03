@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { AnimatedTooltip } from '../ui/animated-tooltip';
+import { clientReview } from '../../data/client-review';
 
 const Herosection = () => {
     const [text, setText] = useState('');
@@ -101,6 +103,9 @@ const Herosection = () => {
 
                     <div className="mt-8 sm:mt-10 md:mt-12 max-w-2xl mx-auto text-sm sm:text-base text-gray-300 animate-[fadeInUp_1s_ease-out_0.9s] opacity-0 [animation-fill-mode:forwards] select-text">
                         <p>Trusted by Founders and Entrepreneurs from all over the world</p>
+                        <div className="flex flex-row items-center justify-center w-full mt-5">
+                            <AnimatedTooltip items={clientReview} />
+                        </div>
                     </div>
                 </div>
             </div>

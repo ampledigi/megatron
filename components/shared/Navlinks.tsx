@@ -9,7 +9,7 @@ const Navlinks = () => {
             <Activelink href="/case-study" text="Case Studies" />
             <Activelink href="/blog" text="Blog" />
             <Activelink href="/about-us" text="About Us" />
-            <Activelink href="/contact-us" text="Contactt Us" />
+            <Activelink href="/contact-us" text="Contact Us" />
         </div>
     );
 };
