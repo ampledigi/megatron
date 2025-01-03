@@ -85,17 +85,17 @@ const Herosection = () => {
                             with Ample
                             <span className="text-orange-500">DIGI</span>.
                         </span>
-                        <span className="block animate-[fadeInUp_1s_ease-out] opacity-0 [animation-fill-mode:forwards] mt-3 sm:mt-5">
+                        <span className="block animate-[fadeInUp_1s_ease-out] opacity-0 [animation-fill-mode:forwards] mt-3 sm:mt-5 md:mt-7">
                             Transforming Ideas Digitally.
                         </span>
                     </h1>
 
-                    <div className="mt-4 sm:mt-6 md:mt-8 max-w-2xl mx-auto text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 animate-[fadeInUp_1s_ease-out_0.9s] opacity-0 [animation-fill-mode:forwards] select-text">
+                    <div className="mt-4 sm:mt-6 md:mt-8 max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-gray-300 animate-[fadeInUp_1s_ease-out_0.9s] opacity-0 [animation-fill-mode:forwards] select-text">
                         <p>Elevate your digital presence with cutting-edge solutions.</p>
-                        <div className="mt-2">No Calls. No BS. Just Results.</div>
+                        <div className="mt-2">No Calls. No Lies. Just Results.</div>
                     </div>
 
-                    <div className="mt-8 sm:mt-10 md:mt-12 lg:mt-14 animate-[fadeInUp_1s_ease-out_1.2s] opacity-0 [animation-fill-mode:forwards]">
+                    <div className="mt-8 animate-[fadeInUp_1s_ease-out_1.2s] opacity-0 [animation-fill-mode:forwards]">
                         <button className="relative z-20 px-6 py-2 text-lg font-semibold rounded bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 transition-all duration-500 transform hover:scale-105 hover:shadow-[0_0_35px_rgba(249,115,22,0.3)] active:scale-95 cursor-pointer select-none">
                             Let&apos;s talk
                         </button>
