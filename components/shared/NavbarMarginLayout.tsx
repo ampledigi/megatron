@@ -45,13 +45,15 @@ const NavbarMarginLayout: React.FC<NavbarMarginLayoutProps> = ({ children }) => 
         };
     }, []);
 
+    console.log(navbarHeight)
+
     return (
         <div className="relative">
             <Navbar />
             <div
                 className="transition-[padding] duration-200"
                 style={{
-                    paddingTop: navbarHeight ? `${navbarHeight}px` : 'var(--navbar-height-fallback, 110px)',
+                    paddingTop: navbarHeight ? `${navbarHeight+24}px` : 'var(--navbar-height-fallback, 110px)',
                 }}
             >
                 {children}
