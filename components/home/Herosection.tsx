@@ -1,62 +1,17 @@
-'use client';
-
-import React, { useState, useEffect } from 'react';
 import { AnimatedTooltip } from '../ui/animated-tooltip';
 import { clientReview } from '../../data/client-review';
+import Typewriter from '../shared/Typewritter';
 
 const Herosection = () => {
-    const [text, setText] = useState('');
     const words = ['Innovate', 'Create', 'Dominate'];
-    const [wordIndex, setWordIndex] = useState(0);
-    const [isDeleting, setIsDeleting] = useState(false);
-    const [showCursor, setShowCursor] = useState(true);
-
-    // Blinking cursor effect
-    useEffect(() => {
-        const cursorInterval = setInterval(() => {
-            setShowCursor((prev) => !prev);
-        }, 530); // Blink speed
-        return () => clearInterval(cursorInterval);
-    }, []);
-
-    useEffect(() => {
-        const typeSpeed = isDeleting ? 100 : 200;
-        const currentWord = words[wordIndex];
-
-        const timer = setTimeout(() => {
-            if (!isDeleting) {
-                if (text === currentWord) {
-                    // Pause at end of word
-                    setTimeout(() => setIsDeleting(true), 1500);
-                    return;
-                }
-                setText(currentWord.substring(0, text.length + 1));
-            } else {
-                if (text === '') {
-                    setIsDeleting(false);
-                    setWordIndex((prev) => (prev + 1) % words.length);
-                    return;
-                }
-                setText(currentWord.substring(0, text.length - 1));
-            }
-        }, typeSpeed);
-
-        return () => clearTimeout(timer);
-    }, [text, isDeleting, wordIndex]);
 
     return (
         <div className="relative min-h-[90vh] md:min-h-[100vh] flex items-center justify-center overflow-hidden bg-black w-full">
             {/* Background gradients with reduced opacity on mobile */}
             <div className="absolute inset-0">
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-600/[0.07] to-orange-900/[0.07] md:from-orange-600/10 md:to-orange-900/15 animate-[pulse_4s_ease-in-out_infinite]"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-600/[0.04] to-orange-900/[0.04] md:from-orange-600/5 md:to-orange-900/10 animate-[pulse_4s_ease-in-out_infinite]"></div>
                 <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,rgba(249,115,22,0.07),transparent_50%)] md:bg-[radial-gradient(ellipse_at_top,rgba(249,115,22,0.08),transparent_50%)]"></div>
-                <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,rgba(194,65,12,0.07),transparent_50%)] md:bg-[radial-gradient(ellipse_at_bottom_right,rgba(194,65,12,0.08),transparent_50%)]"></div>
             </div>
-
-            {/* Slower blob animations with reduced opacity on mobile */}
-            <div className="absolute top-20 left-[5%] md:left-20 w-36 sm:w-48 md:w-64 lg:w-72 h-36 sm:h-48 md:h-64 lg:h-72 bg-orange-500/[0.07] md:bg-orange-500/5 rounded-full mix-blend-multiply filter blur-xl animate-[blob_10s_infinite]"></div>
-            <div className="absolute top-40 right-[5%] md:right-20 w-36 sm:w-48 md:w-64 lg:w-72 h-36 sm:h-48 md:h-64 lg:h-72 bg-orange-700/[0.07] md:bg-orange-700/5 rounded-full mix-blend-multiply filter blur-xl animate-[blob_10s_infinite_3s]"></div>
-            <div className="absolute -bottom-8 left-[10%] md:left-40 w-36 sm:w-48 md:w-64 lg:w-72 h-36 sm:h-48 md:h-64 lg:h-72 bg-orange-600/[0.07] md:bg-orange-600/5 rounded-full mix-blend-multiply filter blur-xl animate-[blob_10s_infinite_6s]"></div>
 
             {/* Grid background with different opacity for mobile and desktop */}
             <div
@@ -72,17 +27,7 @@ const Herosection = () => {
                 <div className="text-center">
                     <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 md:mb-8 lg:mb-10 select-text">
                         <span className="block mt-2 sm:mt-4 text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl animate-[fadeInUp_1s_ease-out_0.6s] opacity-0 [animation-fill-mode:forwards]">
-                            <span className="text-orange-500 transition-colors duration-300">
-                                {text}
-                                <span
-                                    className={`ml-1 text-white ${
-                                        showCursor ? 'opacity-100' : 'opacity-0'
-                                    } transition-opacity duration-100`}
-                                >
-                                    |
-                                </span>
-                            </span>{' '}
-                            with Ample
+                            <Typewriter words={words} /> with Ample
                             <span className="text-orange-500">DIGI</span>.
                         </span>
                         <span className="block animate-[fadeInUp_1s_ease-out] opacity-0 [animation-fill-mode:forwards] mt-3 sm:mt-5 md:mt-7">
